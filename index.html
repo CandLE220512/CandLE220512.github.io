@@ -1,7 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Redirecting...</title>
+    <script type="text/javascript">
+	
+        const pathParts = window.location.pathname.split('/');
+        const destination = pathParts[pathParts.length - 1];
+
+
+        const redirectUrl = `https://${destination}`;
+
+
+        window.location.href = redirectUrl;
+    </script>
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+    <p>If you are not redirected, click <a id="redirectLink" href="#">here</a>.</p>
+    <script type="text/javascript">
+	
+        document.getElementById("redirectLink").href = redirectUrl;
+        document.getElementById("redirectLink").textContent = redirectUrl;
+    </script>
 </body>
 </html>
