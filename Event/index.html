@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SMS Redirect</title>
+</head>
+<body>
+  <p>Redirecting to SMS...</p>
+  <script>
+    // 리디렉션에 사용할 전화번호와 메시지를 URL의 쿼리 매개변수로 가져옵니다.
+    const urlParams = new URLSearchParams(window.location.search);
+    const phoneNumber = urlParams.get('phone') || '01012345678'; // 기본 전화번호
+    const message = urlParams.get('message') || 'Default Message'; // 기본 메시지
+
+    // SMS 링크 생성 및 리디렉션
+    const smsLink = `sms:${phoneNumber}?body=${encodeURIComponent(message)}`;
+    window.location.href = smsLink;
+  </script>
+</body>
+</html>
