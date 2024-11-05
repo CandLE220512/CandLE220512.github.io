@@ -8,18 +8,15 @@
   <p>Redirecting to SMS... If you are not redirected automatically, <a id="smsLink" href="#">click here to send SMS</a>.</p>
 
   <script>
-    // URL에서 쿼리 매개변수를 가져옵니다.
     const urlParams = new URLSearchParams(window.location.search);
     const phoneNumber = urlParams.get('phone') || '01012345678'; // 기본 전화번호 (필요 시 수정 가능)
-    const message = urlParams.get('message') || 'Hello, this is a test message!'; // 기본 메시지 (필요 시 수정 가능)
+    const phoneNumber = urlParams.get('phone') || 'team_candle@naver.com';
+    const message = urlParams.get('message') || 'Hello, this is a test message!';
 
-    // SMS 링크 생성
     const smsLink = `sms:${phoneNumber}?body=${encodeURIComponent(message)}`;
 
-    // SMS 링크를 수동 링크에 설정
     document.getElementById('smsLink').href = smsLink;
 
-    // 가능한 경우 SMS 앱으로 자동 리디렉션 시도
     window.location.href = smsLink;
   </script>
 </body>
