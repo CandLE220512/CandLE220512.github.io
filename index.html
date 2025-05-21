@@ -1,9 +1,33 @@
 <!DOCTYPE html>
-<html>
-<body>
-<h1>CandLE</h1>
-<p>This page is currently under construction.<br>Stay tuned! <br>CandLE is working hard to bring you something awwwwwwwwwwwesomee soon.</p>
-<p>ver:1.0</p>
-<p>test</p>
-</body>
+<html lang=ko>
+	<head>
+		<meta charset ="UTF-8">
+		<title>JSON TEST</title>
+	</head>
+
+	<body>
+		<h1>CandLE</h1>
+		<p>This page is currently under construction.<br>Stay tuned! <br>CandLE is working hard to bring you something awwwwwwwwwwwesomee soon.</p>
+		<p>ver:1.0</p>
+		<p>test</p>
+		
+		<ul id="score-list"></ul>
+		
+		<script>
+			fetch('test.json')
+				.then(response => response.json())
+				.then(data => {
+					const list = document.getElementById('score-list');
+					
+					for(const [key, value] of Object.entries(data)) {
+						const listItem = document.createElement('li');
+						listItem.textContent = `${key}: ${value}`;
+						list.appendChild(listItem);
+					}
+				})
+				.catch(error => console.error('데이터 로딩 오류: ', error));
+		</script>
+		
+	</body>
+
 </html>

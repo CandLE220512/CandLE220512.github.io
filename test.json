@@ -1,5 +1,5 @@
 {
-  "name": "Alice",
-  "age": 25,
-  "city": "Seoul"
+  "Alice": 100,
+  "bob": 87,
+  "charlie": 85
 }
