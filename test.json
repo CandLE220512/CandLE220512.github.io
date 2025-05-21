@@ -2,5 +2,7 @@
   "Alice": 97,
   "bob": 87,
   "charlie": 85,
-  "delta":77
+  "delta":77,
+  "echo":70,
+  "foxtrot":66
 }

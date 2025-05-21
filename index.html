@@ -14,7 +14,7 @@
 		<ul id="score-list"></ul>
 		
 		<script>
-			fetch('test.json?nocache=' + new Date().getTime())
+			fetch('test.json?v=' + Date().now())
 				.then(response => response.json())
 				.then(data => {
 					const list = document.getElementById('score-list');
